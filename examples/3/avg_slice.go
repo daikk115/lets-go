@@ -4,21 +4,21 @@ package main
 
 import "fmt"
 
-func average(xs []float64) (avg float64) {
-	sum := 0.0
-	switch len(xs) {
-	case 0:
-		avg = 0
-	default:
-		for _, v := range xs {
+func avg(input_list []float64) (output float64) {
+	var sum float64
+	var len_input_list float64
+	sum = 0
+	len_input_list = float64(len(input_list))
+	if len(input_list) != 0 {
+		for _, v := range input_list {
 			sum += v
 		}
-		avg = sum / float64(len(xs))
+		output = sum / len_input_list
 	}
 	return
 }
 
 func main() {
-	xs := []float64{1.0, 2.0, 3.0, 4.0}
-	fmt.Println("Average: ", average(xs))
+	input_list := []float64{1.0, 2.0, 3.0, 4.0}
+	fmt.Println("Average: ", avg(input_list))
 }

@@ -4,10 +4,10 @@
 <h1 align="center">Let's Go</h1>
 
 <p align="center">
-    <a href="https://github.com/ntk148v/lets-go/blob/master/LICENSE">
-        <img alt="GitHub license" src="https://img.shields.io/github/license/ntk148v/lets-go?style=for-the-badge">
+    <a href="https://github.com/daikk115/lets-go/blob/master/LICENSE">
+        <img alt="GitHub license" src="https://img.shields.io/github/license/daikk115/lets-go?style=for-the-badge">
     </a>
-    <a href="https://github.com/ntk148v/lets-go/stargazers"> <img alt="GitHub stars" src="https://img.shields.io/github/stars/ntk148v/lets-go?style=for-the-badge"></a>
+    <a href="https://github.com/daikk115/lets-go/stargazers"> <img alt="GitHub stars" src="https://img.shields.io/github/stars/daikk115/lets-go?style=for-the-badge"></a>
 </p>
 
 **Table of Contents**
@@ -1572,7 +1572,7 @@ func main() {
 
 ## 9. Concurrency
 
-- Firstly, don't mess between [parallelism & concurrency](https://github.com/ntk148v/lets-go/blob/master/concurrency-parallelism/concurrency-is-not-parallelism.md).
+- Firstly, don't mess between [parallelism & concurrency](https://github.com/daikk115/lets-go/blob/master/concurrency-parallelism/concurrency-is-not-parallelism.md).
 - **Goroutines** are the central entity in Go's ability for concurrency. A goroutine has a simple model: it is a function executing in parallel with other goroutines in the same address space. It is lightweight, costing little more than the allocation of stack space. And the stack start small, so they are cheap, & grow by allocating (and freeing) heap storage as required.
   - [Goroutine vs OS Thread](./tips-notes/go-concurrency.md).
   - [The maximum number of goroutines](./tips-notes/max-number-of-goroutines.md)

@@ -8,9 +8,10 @@ func main() {
 }
 
 func f() {
+	// if recover() is called out of defer function, it always nil.
 	defer func() {
 		if r := recover(); r != nil {
-			fmt.Println("Recovered in f", r)
+			fmt.Println("Recovered in f: ", r)
 		}
 	}()
 	fmt.Println("Calling g.")
@@ -21,7 +22,7 @@ func f() {
 func g(i int) {
 	if i > 3 {
 		fmt.Println("Panicking!")
-		panic(fmt.Sprintf("%v", i))
+		panic(fmt.Sprintf("Panic with value %v", i))
 	}
 	defer fmt.Println("Defer in g", i)
 	fmt.Println("Printing in g", i)
