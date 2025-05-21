@@ -3,9 +3,12 @@ package main
 func testOpenDefer(a int) {
 	if a == 1 {
 		defer println("Defer in if") // open-coded defer
+		return
 	}
 	if a == 2 {
 		defer println("Defer in if") // open-coded defer
+		// If we uncomment these lines, all defer will be converted to stack-allocated defer because 8 defer x 2 return > 15
+		// return
 	}
 	if a == 3 {
 		defer println("Defer in if") // open-coded defer
