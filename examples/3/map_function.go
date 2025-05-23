@@ -1,17 +1,18 @@
-/* A mapF function is a function that takes a function and a list.
-The function is applied to each member in the list and a new list
-containing these calculated values is returned. */
+/*
+The input function is applied to each member in the list and a new list
+containing these calculated values is returned.
+*/
 package main
 
 import "fmt"
 
-func mapF(f func(int) int, l []int) []int {
-	j := make([]int, len(l))
-	for k, v := range l {
-		j[k] = f(v)
+func applyFunctionToItems(inputFunction func(int) int, oldList []int) []int {
+	newList := make([]int, len(oldList))
+	for k, v := range oldList {
+		newList[k] = inputFunction(v)
 	}
 
-	return j
+	return newList
 }
 
 func main() {
@@ -20,5 +21,6 @@ func main() {
 		return i * i
 	}
 
-	fmt.Println("Map function results:", (mapF(f, m)))
+	fmt.Println("List:", (m))
+	fmt.Println("Squared each items:", applyFunctionToItems(f, m))
 }

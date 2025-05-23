@@ -29,7 +29,7 @@ func main() {
 		jobs <- j
 		fmt.Printf("Job %d sent\n", j)
 	}
-	close(jobs) // Without this, the range loop in the worker goroutines will never exit until the end of main, result live below
+	close(jobs) // Without this, the range loop in the worker goroutines will never exit until the end of main, results like below
 	fmt.Println("All jobs sent to workers, waiting for results...")
 
 	for r := 1; r <= 5; r++ {
