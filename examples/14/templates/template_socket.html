@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+<input id="msg"><button onclick="send()">Send</button>
+<br/>
+<h2>Number from server:</h2>
+<div id="number">–</div>
+<script>
+const ws = new WebSocket("ws://192.168.100.122:8080/ws");
+const number = document.getElementById("number");
+ws.onmessage = (e) => {
+  number.textContent = e.data;
+};
+function send() {
+  ws.send(document.getElementById("msg").value);
+}
+</script>
+</body>
+</html>
