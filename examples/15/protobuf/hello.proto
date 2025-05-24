@@ -1,7 +1,0 @@
-// version proto3
-syntax = "proto3";
-// generated package name
-package main;
-message String {
-    string value = 1;
-}

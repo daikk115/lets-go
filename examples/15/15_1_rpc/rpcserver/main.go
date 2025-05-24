@@ -8,15 +8,22 @@ import (
 
 type HelloService struct{}
 
+// https://golang.google.cn/pkg/net/rpc/
 // Only methods that satisfy these criteria will be made available for remote access; other methods will be ignored:
-// - the method's type is exported.
-// - the method is exported.
-// - the method has two arguments, both exported (or builtin) types.
-// - the method's second argument is a pointer.
-// - the method has return type error.
+// 1. the method's type (Receiver) is exported.
+// 2. the method is exported.
+// 3. the method has two arguments, both arguments types are exported or must be builtin types.
+// 4. the method's second argument is a pointer.
+// 5. the method has return type error.
 // func (t *T) MethodName(argType T1, replyType *T2) error
+
 func (p *HelloService) Hello(request string, reply *string) error {
 	*reply = "Hello " + request
+	return nil
+}
+
+func (p *HelloService) XinChao(request string, reply *string) error {
+	*reply = "Xin chào " + request
 	return nil
 }
 

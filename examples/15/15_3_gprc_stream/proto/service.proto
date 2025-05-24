@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package example;
+
+option go_package = "./;example";
+
+message String {
+	string value = 1;
+}
+
+service HelloService {
+	rpc Hello (String) returns (String);
+	rpc Channel (stream String) returns (stream String);
+}
+
+// bash
+// export PATH=$PATH:$(go env GOPATH)/bin
+// protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative service.proto
