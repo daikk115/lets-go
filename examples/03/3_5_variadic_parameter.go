@@ -17,6 +17,6 @@ func func2(arg ...string) { // the variadic parameter is just a slice.
 func main() {
 	func1(1, 2)
 	func1(3, 4, 5)
-	func2("a", "b")
+	func("a", "b")
 	func2("c", "d", "e")
 }

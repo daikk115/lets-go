@@ -11,5 +11,5 @@ func main() {
 		fmt.Println("block: stopped")
 	}
 	fmt.Println("main: stopped")
-	// fmt.Println("x = ", x) --> Compile error because out of block scope
+	fmt.Println("x = ", x) /// --> Compile error because out of block scope
 }

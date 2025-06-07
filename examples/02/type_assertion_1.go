@@ -10,7 +10,7 @@ func testing1() {
 }
 
 func testing2() {
-	var x interface{} = "hello"
+	var x interface{} = "123"
 	str := x.(int)
 	fmt.Println(str)
 	fmt.Print("Testing2 is OK\n\n")

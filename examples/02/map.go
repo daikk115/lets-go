@@ -6,12 +6,13 @@ import (
 
 func testing(my_map map[string]int) {
 	fmt.Println(my_map)
-	value, key := my_map["MyOwn"]
-	fmt.Println("Value", value, "Key", key)
+	value, existing := my_map["MyOwn"]
+	fmt.Println("Value", value, "existing", existing)
 	my_map["MyOwn"] = 100
-	value = my_map["MyOwn"]
-	fmt.Println("Value Only", value)
 	fmt.Println(my_map)
+	value, existing = my_map["MyOwn"]
+	value = my_map["MyOwn"]
+	fmt.Println("Value", value, "existing", existing)
 }
 
 func main() {

@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 func main() {
 	f()
@@ -22,6 +25,12 @@ func f() {
 func g(i int) {
 	if i > 3 {
 		fmt.Println("Panicking!")
+		f, err := os.Open("phuong-secrets.txt")
+		if err != nil {
+			fmt.Println("Error opening file:", err)
+			panic(fmt.Sprintf("Error opening file:", err))
+		}
+		defer f.Close()
 		panic(fmt.Sprintf("Panic with value %v", i))
 	}
 	defer fmt.Println("Defer in g", i)

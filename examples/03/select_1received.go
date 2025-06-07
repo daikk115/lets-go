@@ -10,7 +10,7 @@ func main() {
 	ch2 := make(chan string)
 
 	go func() {
-		time.Sleep(3 * time.Second)
+		time.Sleep(5 * time.Second)
 		ch1 <- "from ch1"
 	}()
 
@@ -18,6 +18,8 @@ func main() {
 		time.Sleep(2 * time.Second)
 		ch2 <- "from ch2"
 	}()
+
+	// fmt.Println("Received BC:", <-ch1)
 
 	select {
 	case msg := <-ch1:
